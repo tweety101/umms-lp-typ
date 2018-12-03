@@ -1,8 +1,9 @@
 .locations {
-
+    /* autoprefixer grid: autoplace */
     
     background-color: $color-background-light;
     padding: 3.5rem 0;
+    
 
     &__heading {
         font-size: 2.2rem;
@@ -21,34 +22,39 @@
 
     &__grid {
         height: 100%;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 38rem;
-        grid-gap: 3rem;
-        justify-content: center;
-        justify-items: stretch;
-
+        display: flex;
         @media (max-width: $bp-medium) {
-            grid-template-columns: repeat(2, minmax(20rem, 25rem));
-            grid-template-rows: repeat(2, 35rem);
-            grid-gap: 5rem;
+            flex-direction: column;
         }
-        @media (max-width: $bp-smallest) {
-            grid-template-columns: minmax(20rem, 25rem);
-            grid-template-rows: repeat(2, 35rem);
-            grid-gap: 5rem;
-        }
+
+       
         
     }
+
+    &__pair {
+        flex: 1;
+        display: flex;
+        margin-top: 4rem;
+        @media (max-width: $bp-small) {
+            flex-direction: column;
+            margin-top: 0;
+        }
+    }
+
 }
 
 .location {
-    
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    min-height: 18rem;
+    margin: 0 2%;
 
+    @media (max-width: $bp-small) {
+        margin: 3rem 0;
+    }
 
     &__icon-box {
         width: 7.8rem;
@@ -144,12 +150,3 @@
     }
 
 
-
-.grey-filler__1 {
-    grid-column: wide-start/main-start;
-    background-color: $color-background-light;
-}
-.grey-filler__2 {
-    grid-column: main-end/wide-end;
-    background-color: $color-background-light;
-}
