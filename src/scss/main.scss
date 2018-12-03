@@ -1,7 +1,10 @@
 
+@import "base";
+@import "typography";
+@import "layout";
+@import "hero";
+@import "contactform";
+@import "content";
+@import "locations";
 
-$color: green;
-
-h1 {
-    color: $color;
-}
+@import "hero-ty";

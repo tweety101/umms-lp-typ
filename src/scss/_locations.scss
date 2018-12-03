@@ -1,0 +1,155 @@
+.locations {
+
+    
+    background-color: $color-background-light;
+    padding: 3.5rem 0;
+
+    &__heading {
+        font-size: 2.2rem;
+        font-weight: 600;
+        letter-spacing: 0.01rem;
+        line-height: 2.6rem;
+        margin-bottom: 4rem;
+        text-align: center;
+        
+
+        @media (max-width: $bp-small) {
+            font-size: 1.8rem;
+        }
+        
+    }
+
+    &__grid {
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 38rem;
+        grid-gap: 3rem;
+        justify-content: center;
+        justify-items: stretch;
+
+        @media (max-width: $bp-medium) {
+            grid-template-columns: repeat(2, minmax(20rem, 25rem));
+            grid-template-rows: repeat(2, 35rem);
+            grid-gap: 5rem;
+        }
+        @media (max-width: $bp-smallest) {
+            grid-template-columns: minmax(20rem, 25rem);
+            grid-template-rows: repeat(2, 35rem);
+            grid-gap: 5rem;
+        }
+        
+    }
+}
+
+.location {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+
+    &__icon-box {
+        width: 7.8rem;
+        height: 7.8rem;
+        background-color: $color-primary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2.5rem;
+    }
+
+    &__icon {
+        width: 2.5rem;
+        height: 3.5rem;
+        fill: #ffffff;
+    }
+
+    &__heading {
+        text-align: center;
+       
+
+    }
+
+    &__sub-heading {
+        max-width: 16rem;
+        
+        margin-bottom: 3.5rem;
+        text-align: center;
+    }
+
+    
+
+    &__address-box {
+        flex: 0 0 17rem;
+        align-self: stretch;
+        background-color: #ffffff;
+        position: relative;
+        z-index: 5;
+        font-size: 1.8rem;
+        font-weight: 500;
+        letter-spacing: 0.01rem;
+        text-align: center;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: all .3s;
+        @media (max-width: $bp-large) {
+            
+            font-size: 1.6rem;
+        }
+
+        @media (max-width: $bp-medium) {
+            font-size: 1.6rem;
+            
+        }
+        @media (max-width: $bp-small) {
+            font-size: 1.6rem;
+            
+            padding: 10%;
+            
+        }
+
+    }
+    &__address-box::before {
+        content: '';
+        width: 5rem;
+        height: 5rem;
+        position: absolute;
+        top: -1rem;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+        background-color: #ffffff;
+        z-index: -1;
+    }
+
+    &__address-text {
+        margin-bottom: 1.5rem;
+    }
+
+    &__address-link {
+        color: inherit;
+        
+    }
+
+    
+
+}
+.location:hover .location__address-box,
+    .location__address-box:hover {
+        transform: translateY(-3px);
+        box-shadow: .5rem 1rem 1rem rgba(0,0,0,.4);
+    }
+
+
+
+.grey-filler__1 {
+    grid-column: wide-start/main-start;
+    background-color: $color-background-light;
+}
+.grey-filler__2 {
+    grid-column: main-end/wide-end;
+    background-color: $color-background-light;
+}

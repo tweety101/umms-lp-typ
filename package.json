@@ -4,16 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch:sass": "node-sass src/scss/main.scss dist/css/style.css -w",
+    "watch:sass": "node-sass src/scss/main.scss dist/style.css -w",
     "devserver": "live-server --open=dist",
-    "start": "npm-run-all --parallel devserver watch:sass watch:html",
+    "start": "npm-run-all --parallel devserver watch:sass watch:html watch:img",
     "compile:sass": "node-sass src/scss/main.scss dist/css/style.comp.css",
     "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' dist/css/style.comp.css -o dist/css/style.prefix.css",
-    "compress:css": "node-sass dist/css/style.prefix.css dist/css/style.css --output-style compressed",
+    "compress:css": "node-sass dist/css/style.prefix.css dist/style.css --output-style compressed",
     "build:css": "npm-run-all compile:sass prefix:css compress:css",
     "copy:html": "find src -name '*.html' -type f -exec cp {} dist \\;",
     "watch:html": "onchange 'src/**/*.html' -- npm run copy:html",
-    "build": "npm-run-all copy:html build:css"
+    "optimize:img": "imagemin src/images/* --out-dir=dist/images",
+    "watch:img": "onchange 'src/images/*' -- npm run optimize:img",
+    "build": "npm-run-all copy:html build:css optimize:img"
   },
   "keywords": [],
   "author": "",
