@@ -9,10 +9,11 @@ $color-background-dark: #565453;
 $color-font-main: #2C2A29;
 
 $bp-large: 1050px;
-$bp-medium: 840px;
+$bp-medium: 860px;
 $bp-small: 700px;
 $bp-smallest: 500px;
 
+$font-family: 'Montserrat', sans-serif;
 
 *,
 *::before,
@@ -34,7 +35,7 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: $font-family;
     color: $color-font-main;
     font-weight: 500;
 }
