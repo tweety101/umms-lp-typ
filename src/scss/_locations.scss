@@ -1,5 +1,5 @@
 .locations {
-    /* autoprefixer grid: autoplace */
+    
     
     background-color: $color-background-light;
     padding: 3.5rem 0;
@@ -35,10 +35,12 @@
         flex: 1;
         display: flex;
         margin-top: 4rem;
+        min-height: 37rem;
         @media (max-width: $bp-small) {
             flex-direction: column;
             align-items: center;
             margin-top: 0;
+            min-height: 74rem;
         }
     }
 
@@ -50,7 +52,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 35rem;
+    height: 38rem;
     margin: 0 2%;
 
     @media (max-width: $bp-small) {
@@ -60,12 +62,8 @@
     }
 
     &__icon-box {
-        width: 7.8rem;
-        height: 7.8rem;
+        padding: 2.5rem 3rem;
         background-color: $color-primary;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         margin-bottom: 2.5rem;
     }
 
