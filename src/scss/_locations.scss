@@ -10,7 +10,7 @@
         font-weight: 600;
         letter-spacing: 0.01rem;
         line-height: 2.6rem;
-        margin-bottom: 4rem;
+        
         text-align: center;
         
 
@@ -103,7 +103,7 @@
         padding: 2rem;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: flex-start;
         transition: all .3s;
         @media (max-width: $bp-large) {
             
