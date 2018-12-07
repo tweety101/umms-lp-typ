@@ -103,7 +103,7 @@
         padding: 2rem .3rem;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: space-between;
         transition: all .3s;
         @media (max-width: $bp-large) {
             
