@@ -100,7 +100,7 @@
         font-weight: 500;
         letter-spacing: 0.01rem;
         text-align: center;
-        padding: 2rem;
+        padding: 2rem .3rem;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -109,13 +109,16 @@
             
             font-size: 1.6rem;
         }
+        @media (max-width: 950px) {
+            font-size: 1.5rem;
+        }
 
         @media (max-width: $bp-medium) {
             font-size: 1.6rem;
             
         }
         @media (max-width: $bp-small) {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             
             padding: 10%;
             
@@ -140,16 +143,21 @@
 
     &__address-link {
         color: inherit;
+
+        transition: .3s all;
         
     }
 
     
 
 }
-.location:hover .location__address-box,
-    .location__address-box:hover {
+.location:hover .location__address-box
+     {
         transform: translateY(-3px);
         box-shadow: .5rem 1rem 1rem rgba(0,0,0,.4);
     }
 
+.location:hover .location__address-link {
+    color: orangered;
+}
 
