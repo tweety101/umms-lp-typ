@@ -12,10 +12,11 @@
     "compress:css": "node-sass dist/css/style.prefix.css dist/style.css --output-style compressed",
     "build:css": "npm-run-all compile:sass prefix:css compress:css",
     "copy:html": "find src -name '*.html' -type f -exec cp {} dist \\;",
+    "copy:static": "cp -R src/static/ dist/static/",
     "watch:html": "onchange 'src/**/*.html' -- npm run copy:html",
     "optimize:img": "imagemin src/images/* --out-dir=dist/images",
     "watch:img": "onchange 'src/images/*' -- npm run optimize:img",
-    "build": "npm-run-all copy:html build:css optimize:img"
+    "build": "npm-run-all copy:static copy:html build:css optimize:img"
   },
   "browserslist": [
     "last 5 version",
