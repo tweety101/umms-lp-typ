@@ -1,10 +1,21 @@
 .home-video {
     padding-bottom: 3rem;
-    margin-left: 5rem;
+    margin: 0 5rem;
+    @media (max-width: $bp-small ) {
+        margin: 0;
+        
+     }
+
+    
     &__video {
 
-        width: 60rem;
-        height: 40rem;
+        max-width: 63rem;
+        width: 100%;
+        
+        @media (max-width: $bp-small ) {
+            max-width: 100%;
+     
+         }
         
     }
 }
